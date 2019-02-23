@@ -1,9 +1,11 @@
 import React from "react"
 import Layout from "../components/layout/layout-component"
 import Banner from "../components/banner/banner-component"
+import Menu from "../components/menu/menu-component"
 
 export default () => (
   <React.Fragment>
+    <Menu/>
     <Banner/>
     <Layout>
       <h1>Hi! I'm building a fake Gatsby site as part of a tutorial!</h1>

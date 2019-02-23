@@ -1,0 +1,26 @@
+.menu {
+    background-color: #24292D;
+    height: 70px;
+    display: block;
+}
+
+.menu h2 {
+    color: white;
+    margin-left: 1rem;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.menu ul {
+    list-style-type: none;
+    float: right;
+}
+
+.menu-item {
+    display: inline-block;
+    margin-top: 25px;
+}
