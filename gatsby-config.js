@@ -1,3 +1,4 @@
 module.exports = {
-  pathPrefix: "/chasehardin"
+  pathPrefix: "/chasehardin",
+  plugins: [`gatsby-plugin-typography`],
 }
