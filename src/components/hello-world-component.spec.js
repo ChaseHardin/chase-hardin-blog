@@ -1,7 +1,7 @@
 import React from "react"
 import renderer from "react-test-renderer"
 
-import HelloWorld from "./hello-world.component"
+import HelloWorld from "./hello-world-component"
 
 describe("Hello World", () => {
   it("renders correctly", () => {
