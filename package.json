@@ -11,7 +11,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "jest"
   },
   "dependencies": {
     "gatsby": "^2.1.17",
@@ -22,8 +22,13 @@
     "typography": "^0.16.18"
   },
   "devDependencies": {
+    "babel-jest": "^24.1.0",
+    "babel-preset-gatsby": "^0.1.8",
     "gh-pages": "^2.0.1",
-    "prettier": "^1.16.4"
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.1.0",
+    "prettier": "^1.16.4",
+    "react-test-renderer": "^16.8.3"
   },
   "repository": {
     "type": "git",
