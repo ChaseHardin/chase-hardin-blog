@@ -4,15 +4,24 @@
     display: block;
 }
 
-.menu h2 {
+.menu h3 {
     color: white;
-    margin-left: 1rem;
+    margin-bottom: 0;
+}
+
+.app-name {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0;
+    margin: 6px 6px 6px 1.5rem;
+    float: left;
 }
 
 .menu a {
     color: white;
     text-decoration: none;
-    margin-right: 1rem;
+    margin-right: 1.5rem;
 }
 
 .menu ul {

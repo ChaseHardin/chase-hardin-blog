@@ -12,7 +12,9 @@ export default function Menu() {
         </ul>
       </div>
       <Link to='/'>
-        <h2>CHASE HARDIN</h2>
+        <div className='app-name'>
+          CHASE<br />HARDIN
+        </div>
       </Link>
     </header>
   )

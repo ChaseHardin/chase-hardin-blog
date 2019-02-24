@@ -17,7 +17,7 @@ describe('Menu', () => {
 
   it('should link to home page', () => {
     expect(menu.getLinkProp()).toEqual('/')
-    expect(menu.getLinkText()).toEqual('CHASE HARDIN')
+    expect(menu.getLinkText()).toEqual('CHASEHARDIN')
   });
 
   it('should link to about page', () => {
