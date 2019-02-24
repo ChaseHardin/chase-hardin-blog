@@ -5,3 +5,21 @@ a {
 a {
     text-decoration: none;
 }
+
+p {
+    text-align: justify;
+}
+
+.fa-icon-overrides {
+    color: #FFA500;
+    font-size: 20px;
+}
+
+.blog-details {
+    margin-right: 14px;
+    color: #494949;
+}
+
+.blog-excerpt {
+    color: #494949;
+}

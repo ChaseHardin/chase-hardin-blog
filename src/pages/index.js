@@ -1,7 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { FaCalendar } from "react-icons/fa"
 
 import Layout from "../components/layout/layout-component"
+import { FaUser } from "react-icons/fa/index"
 
 export default ({ data }) => (
   <React.Fragment>
@@ -13,10 +15,13 @@ export default ({ data }) => (
             <img src={node.frontmatter.cover} alt='cover photo'/>
             <h3>{node.frontmatter.title}</h3>
             <div>
-              <h6>{node.frontmatter.date} | {node.frontmatter.author}</h6>
+              <span className='blog-details'><FaCalendar className='fa-icon-overrides'/> {node.frontmatter.date}</span>
+              <span className='blog-details'><FaUser className='fa-icon-overrides'/> {node.frontmatter.author}</span>
             </div>
-            <p>{node.excerpt}</p>
+            <p className='blog-excerpt'>{node.excerpt}</p>
           </Link>
+          <hr />
+
         </div>
       ))}
     </Layout>
@@ -34,7 +39,7 @@ export const query = graphql`
             title
             author
             cover
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "YYYY-MM-DD")
           }
           fields {
             slug
