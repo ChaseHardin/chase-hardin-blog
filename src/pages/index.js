@@ -10,10 +10,11 @@ export default ({ data }) => (
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
           <Link to={node.fields.slug}>
-            <h3>
-              {node.frontmatter.title}{" "}
-              <span> — {node.frontmatter.date}</span>
-            </h3>
+            <img src={node.frontmatter.cover} alt='cover photo'/>
+            <h3>{node.frontmatter.title}</h3>
+            <div>
+              <h6>{node.frontmatter.date} | {node.frontmatter.author}</h6>
+            </div>
             <p>{node.excerpt}</p>
           </Link>
         </div>
@@ -31,6 +32,8 @@ export const query = graphql`
           id
           frontmatter {
             title
+            author
+            cover
             date(formatString: "DD MMMM, YYYY")
           }
           fields {
