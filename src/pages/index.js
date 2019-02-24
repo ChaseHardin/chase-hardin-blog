@@ -12,7 +12,7 @@ export default ({ data }) => (
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
           <Link to={node.fields.slug}>
-            <img src={node.frontmatter.cover} alt='cover photo'/>
+            <img src={node.frontmatter.cover} alt=''/>
             <h3>{node.frontmatter.title}</h3>
             <div>
               <span className='blog-details'><FaCalendar className='fa-icon-overrides'/> {node.frontmatter.date}</span>
