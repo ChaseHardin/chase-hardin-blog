@@ -33,3 +33,9 @@
     display: inline-block;
     margin-top: 25px;
 }
+
+@media only screen and (max-width: 350px) {
+    .app-name {
+        margin: 6px 6px 6px 1rem;
+    }
+}
