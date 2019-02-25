@@ -4,7 +4,8 @@ import Layout from "../components/layout/layout-component"
 export default function About() {
   return (
     <Layout>
-      <h2>Who is this dude?</h2>
+      <img src={require("../images/profile_pic.png")} className='profile-picture' alt={''}/>
+      <h2 style={{textAlign: "center"}}>Who is this dude?</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus urna velit, ullamcorper nec diam in,
         ultrices pretium mauris. Nulla ut eleifend risus. Mauris blandit nisl a nibh gravida tincidunt. Donec interdum,
@@ -14,9 +15,6 @@ export default function About() {
         semper elementum efficitur vel, congue a sapien. Sed diam sem, pretium et sem bibendum, pretium ullamcorper
         diam. Integer molestie nisi eu nisl pellentesque, vitae lobortis sem pulvinar.
       </p>
-
-      <img src={require("../images/profile_pic.png")} className='profile-picture'/>
-
       <p>
         Praesent iaculis vestibulum dui id ultrices. Cras turpis lorem, accumsan sodales varius quis, molestie sit amet
         metus. Nulla id mauris quis tortor maximus pharetra. Pellentesque nec porta neque. In blandit velit at lacus
