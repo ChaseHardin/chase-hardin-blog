@@ -23,3 +23,11 @@ p {
 .blog-excerpt {
     color: #494949;
 }
+
+.profile-picture {
+    border-radius: 50%;
+    height: 250px;
+    width: auto;
+    float: right;
+    margin-left: 16px;
+}
