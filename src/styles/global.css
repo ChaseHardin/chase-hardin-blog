@@ -33,3 +33,9 @@ p {
     margin-right: auto;
     padding-bottom: 8px;
 }
+
+.profile-highlight {
+    font-style: italic;
+    text-align: center;
+    margin-top: -15px;
+}
