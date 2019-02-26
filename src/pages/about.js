@@ -18,7 +18,8 @@ export default function About() {
       <p>
         Outside of tech, I am a husband to an amazing wife and in search of the perfect acreage. I’m a guitarist with a
         love for a great groove. A few of my favorites include Jimi Hendrix, Zeppelin, and the Foo Fighters if that
-        gives you any idea. I’m also an avid outdoorsman who enjoys hunting, fishing, camping, and horse riding.
+        gives you any idea of my musical influences. I’m also an avid outdoorsman who enjoys hunting, fishing, camping,
+        and horse riding.
       </p>
 
       <h2 style={{ textAlign: "center" }}>Why Read?</h2>
