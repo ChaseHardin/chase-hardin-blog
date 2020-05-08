@@ -15,7 +15,7 @@ export default function About() {
       </p>
       <p>
         Outside of tech, I’m a husband to an amazing wife. I live on an acreage with chickens, cats, and my dog, Ranger. 
-        I’m a woodworker and recently been building farmhouse style tables, garden benches, and cutting boards. 
+        I’m a woodworker and recently been building farmhouse style tables, garden potting benches, and cutting boards. 
         Other hobbies include hunting, fishing, horse riding, and playing guitar. A few of my favorite bands 
         include Zeppelin, Hendrix, and the Foo Fighters.
       </p>
@@ -25,7 +25,7 @@ export default function About() {
         this blog is just one way for me to contribute back to the developer community. On this blog, 
         I’ll be sharing my ideas, how I write code, and how I overcame technical problems. 
         How I develop is just one of many ways to write code so please don’t take these as absolutes. 
-        These posts are meant to make us question our way of developing and writing code. 
+        These posts are meant to make us question our way of thinking and writing code. 
       </p>
     </Layout>
   )
