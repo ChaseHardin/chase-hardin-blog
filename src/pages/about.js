@@ -9,25 +9,23 @@ export default function About() {
 
       <h2 style={{ textAlign: "center" }}>Who is This Dude?</h2>
       <p>
-        As I’m sure you can guess, my name is Chase Hardin and I’m a Software Engineer in the Des Moines metro area.
-        I’ve spent the past four years in tech building web based applications and I enjoy the challenge of becoming a
-        polyglot. Early in my career, I learned about Test Driven Development (TDD) and that has become a way of life
-        for me. A few of my favorite languages/frameworks to develop in include C#/.NET, Python, Angular, React, and
-        Node.js.
+        Hi, I’m Chase Hardin. I’m a Software Engineer in the Des Moines metro area and spent the past five years in tech. 
+        Early into my career, I learned about Test Driven Development (TDD) and that have become a way of life for me. 
+        A few of my favorite languages/frameworks to work with include React, Node, Angular, and Python.
       </p>
       <p>
-        Outside of tech, I am a husband to an amazing wife and in search of the perfect acreage. I’m a guitarist with a
-        love for a great groove. A few of my favorite artists include Jimi Hendrix, Zeppelin, and the Foo Fighters if
-        that gives you any idea of my musical influences. I’m also an avid outdoorsman who enjoys hunting, fishing,
-        camping, and horse riding.
+        Outside of tech, I’m a husband to an amazing wife. I live on an acreage with chickens, cats, and my dog, Ranger. 
+        I’m a woodworker and recently been building farmhouse style tables, garden benches, and cutting boards. 
+        Other hobbies include hunting, fishing, horse riding, and playing guitar. A few of my favorite bands 
+        include Zeppelin, Hendrix, and the Foo Fighters.
       </p>
-
       <h2 style={{ textAlign: "center" }}>The Purpose of This Blog</h2>
       <p>
-        I’ve always found great joy in helping others learn new technologies and the blog is just one way for me to
-        contribute back to the developer community. In this blog, I’ll be sharing my ideas, discoveries, and ways of
-        writing code. How I develop is just one of many ways to write code so please don’t take these as absolutes.
-        These posts are meant to make us question our way of developing and writing code.
+        I’ve always enjoyed helping others learn new technologies and 
+        this blog is just one way for me to contribute back to the developer community. On this blog, 
+        I’ll be sharing my ideas, how I write code, and how I overcame technical problems. 
+        How I develop is just one of many ways to write code so please don’t take these as absolutes. 
+        These posts are meant to make us question our way of developing and writing code. 
       </p>
     </Layout>
   )

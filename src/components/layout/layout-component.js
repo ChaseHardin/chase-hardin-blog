@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     <React.Fragment>
       <Banner/>
       <Menu/>
-      <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
+      <div style={{ margin: `3rem auto`, maxWidth: 750, padding: `0 1rem` }}>
         {children}
       </div>
     </React.Fragment>
