@@ -14,10 +14,11 @@ export default function BlogPost(props) {
   return (
     <Layout>
       <div>
+        <img src={post.frontmatter.cover} alt={post.frontmatter.title} />
         <h1>{post.frontmatter.title}</h1>
-        <div className='blog-content' dangerouslySetInnerHTML={{ __html: post.html }}/>
+        <div className='blog-content' dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
-      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig}/>
+      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
     </Layout>
   )
 }
@@ -28,6 +29,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        cover
       }
     }
   }
