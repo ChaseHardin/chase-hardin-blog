@@ -2,13 +2,13 @@
 title: "A Functional Approach to The Builder Pattern"
 date: "2020-07-13"
 author: Chase Hardin
-cover: https://www.incimages.com/uploaded_files/image/1940x900/getty_639742462_355285.jpg
+cover: https://cdn.pixabay.com/photo/2015/04/05/16/12/lego-708088_960_720.jpg
 ---
 
-The builder pattern is one of my go to’s when programming. It makes data setup extremely easy - instantiate a class, chain some methods together, and finish by executing a build or execute method. However, every time I write a builder class, I can’t help but wonder if there’s a more functional approach that completely removes state. This of course is on the forefront of my mind since my contract relates to writing React and utilizing pure components.
+The builder pattern is one of my go-to’s when programming. It makes data setup extremely easy - instantiate a class, chain some methods together, and finish by executing a build or execute method. However, every time I write a builder class, I can’t help but wonder if there’s a more functional approach that completely removes state. This of course is on the forefront of my mind since my contract relates to writing React and utilizing pure components.
 
 ## What are we building? 🛠 
-Imagine you’re a woodworker and build tables as a side business. When a client enquires about a dining room table, we need to collect their information, keep track of the table dimensions, and calculate how much we’d charge to build the table. This can be a time consuming process without software. To quickly generate an estimate, let’s create a simple builder that’ll handle most of the work for us. 
+Imagine you’re a woodworker who builds tables as a side business. When a client inquires about a dining room table, we need to collect their information, keep track of the table dimensions, and calculate how much we’d charge to build the table. This can be a time consuming process without software. To quickly generate an estimate, let’s create a simple builder that’ll handle most of the work for us. 
 
 <i>This example will be fairly trivial, but the concepts are still applicable on larger scaled apps.</i>
 
@@ -78,7 +78,7 @@ Now that we have the `setupData` function completed, we are ready to start addin
 export const addClient = client => state => ({...state, client});
 ```
 
-While this function is only one line of code, there's a lot going on. This function is leveraging a functional programing concept known as currying. It allows us to return a new function for each argument in the line while also using closure to keep the arguments alive. To provide a more concrete example, let's talk through the `addClient` function. This function passes the `client` argument and returns a new function. The second argument in the line is `state`. We have access to this because when used in conjunction with `flow`, it passes the returned value from the function previously executed. In our case, the state from the previous function or initial state if used first. Here are a few more examples of the data helpers.
+While this function is only one line of code, there's a lot going on. This function is leveraging a functional programing concept known as <i>currying</i>. It allows us to return a new function for each argument in the line while also using closure to keep the arguments alive. To provide a more concrete example, let's talk through the `addClient` function. This function passes the `client` argument and returns a new function. The second argument in the line is `state`. We have access to this because when used in conjunction with `flow`, it passes the returned value from the function previously executed. In our case, the state from the previous function or initial state if used first. Here are a few more examples of the data helpers.
 
 ```javascript
 export const addDimensions = dimensions => state => ({...state, dimensions});
