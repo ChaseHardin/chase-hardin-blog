@@ -95,7 +95,7 @@ export const calculatePrice = () => state => {
     return state;
 };
 ```
-If this topic is still a bit fuzzy, don't worry. Check out [this](https://mostly-adequate.gitbooks.io/mostly-adequate-guide/ch04.html) is a great resource.
+If this topic is still a bit fuzzy, don't worry. Check out [this](https://mostly-adequate.gitbooks.io/mostly-adequate-guide/ch04.html) great resource.
 
 ## Conclusion 
 The builder pattern is extremely helpful. If you're comfortable with the class style builder and like that pattern best, great! However, if you're running into issues with side effects, mutation, or class level state, I hope you'll give the functional builders a try. 
