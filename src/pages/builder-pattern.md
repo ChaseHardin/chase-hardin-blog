@@ -7,6 +7,8 @@ cover: https://cdn.pixabay.com/photo/2015/04/05/16/12/lego-708088_960_720.jpg
 
 The builder pattern is one of my go-to’s when programming. It makes data setup extremely easy - instantiate a class, chain some methods together, and finish by executing a build or execute method. However, every time I write a builder class, I can’t help but wonder if there’s a more functional approach that completely removes state. This of course is on the forefront of my mind since my contract relates to writing React and utilizing pure components.
 
+I don't like creating classes because of the issues that a come with  side effects, mutation, and sharing state. I can’t tell you how many times I’ve wasted an afternoon debugging a section of code only to learn that the state wasn’t correct or it was getting set when I didn’t expect it to be. I’ve found that functional builders and leveraging pure functions can help reduce these pains.
+
 ## What are we building? 🛠 
 Imagine you’re a woodworker who builds tables as a side business. When a client inquires about a dining room table, we need to collect their information, keep track of the table dimensions, and calculate how much we’d charge to build the table. This can be a time consuming process without software. To quickly generate an estimate, let’s create a simple builder that’ll handle most of the work for us. 
 
