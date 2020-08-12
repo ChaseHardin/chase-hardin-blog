@@ -9,6 +9,7 @@ a {
 p {
     text-align: justify;
     font-size: 18px;
+    text-decoration: none;
 }
 
 .fa-icon-overrides {
@@ -23,6 +24,7 @@ p {
 
 .blog-excerpt {
     color: #494949;
+    text-decoration: none;
 }
 
 .profile-picture {

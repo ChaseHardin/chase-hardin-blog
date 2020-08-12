@@ -1,9 +1,11 @@
-import React from "react"
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { Link, graphql } from "gatsby"
 import { FaCalendar } from "react-icons/fa"
 
-import Layout from "../components/layout/layout-component"
-import { FaUser } from "react-icons/fa/index"
+import Layout from '../components/layout/layout-component'
+import { FaUser } from 'react-icons/fa/index'
 
 export default ({ data }) => (
   <React.Fragment>
