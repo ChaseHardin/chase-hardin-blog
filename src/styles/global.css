@@ -3,17 +3,16 @@ a h3 {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 p {
     text-align: justify;
     font-size: 18px;
-    text-decoration: none;
 }
 
 .fa-icon-overrides {
-    color: #FFA500;
+    color: #ff4343;
     font-size: 20px;
 }
 
@@ -24,7 +23,6 @@ p {
 
 .blog-excerpt {
     color: #494949;
-    text-decoration: none;
 }
 
 .profile-picture {

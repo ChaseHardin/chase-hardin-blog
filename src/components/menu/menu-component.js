@@ -20,8 +20,8 @@ export default function Menu() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse className="justify-content-end" >
         <Nav>
-          <Nav.Link href='/'>HOME</Nav.Link>
-          <Nav.Link href='/about/'>ABOUT</Nav.Link>
+          <Nav.Link style={{fontWeight: 'bold'}} href='/'>HOME</Nav.Link>
+          <Nav.Link style={{fontWeight: 'bold'}} href='/about/'>ABOUT</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
