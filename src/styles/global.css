@@ -35,6 +35,21 @@ p {
     padding-bottom: 8px;
 }
 
+.profile-menu-picture-container {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.profile-menu-picture {
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
 .profile-highlight {
     font-style: italic;
     text-align: center;
