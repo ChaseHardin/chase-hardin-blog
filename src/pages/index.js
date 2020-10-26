@@ -21,7 +21,6 @@ export default ({ data }) => (
             <p className='blog-excerpt'>{node.excerpt}</p>
           </Link>
           <hr />
-
         </div>
       ))}
     </Layout>
