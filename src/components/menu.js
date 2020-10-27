@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 
 export const Menu = () => {
     return (
+        <>
         <AppBar position="fixed" style={{ backgroundColor: '#242526' }}>
             <Toolbar>
                 <div className='profile-menu-picture-container'>
@@ -15,16 +16,18 @@ export const Menu = () => {
                 <Link to={'/'} style={{ marginRight: '20px' }}>
                     <Typography variant="h6" noWrap style={{ color: 'white' }}>
                         Chase Hardin
-                        </Typography>
+                    </Typography>
                 </Link>
                 <Grid container direction="row" justify="flex-end" alignItems="center">
                     <Link to={'/about/'} style={{ color: 'white' }}>
                         <Typography variant="h6">
                             About
                         </Typography>
-                    </Link>
-                </Grid>
-            </Toolbar>
-        </AppBar>
+                        </Link>
+                    </Grid>
+                </Toolbar>
+            </AppBar>
+            <Toolbar />
+        </>
     )
 }
