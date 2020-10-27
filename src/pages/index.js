@@ -6,11 +6,25 @@ import { Menu } from '../components/menu';
 
 export default ({ data }) => {
   const details = data.allMarkdownRemark.edges.map(({ node }) => {
+    if (node.frontmatter.published) {
+      return {
+        title: node.frontmatter.title,
+        description: node.excerpt,
+        image: node.frontmatter.cover,
+        renderFooter: <Button
+          variant="contained"
+          size={'large'}
+          style={{ float: 'right', backgroundColor: 'black' }}><Link to={node.fields.slug}>Read More</Link></Button>
+      }
+    }
     return {
       title: node.frontmatter.title,
       description: node.excerpt,
       image: node.frontmatter.cover,
-      renderFooter: <Button variant="outlined"><Link to={node.fields.slug}>Read</Link></Button>
+      renderFooter: <Button
+        disabled
+        variant="contained"
+        size={'large'} style={{ float: 'right' }}><Link to={node.fields.slug}>Coming Soon</Link></Button>
     }
   });
 
@@ -36,6 +50,7 @@ export const query = graphql`
             author
             cover
             date(formatString: "YYYY-MM-DD")
+            published
           }
           fields {
             slug
