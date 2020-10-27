@@ -3,7 +3,10 @@ module.exports = {
   plugins: [
     `gatsby-plugin-typography`,
     `gatsby-transformer-remark`,
-    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {}
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
