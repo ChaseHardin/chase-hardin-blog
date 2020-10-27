@@ -1,5 +1,4 @@
 import React from "react"
-import Banner from "../banner/banner-component"
 import 'fontsource-roboto';
 import {Menu} from '../menu';
 
