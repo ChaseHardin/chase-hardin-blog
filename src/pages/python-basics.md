@@ -6,4 +6,4 @@ cover: https://cdn.pixabay.com/photo/2017/07/28/23/18/coming-soon-2550190_1280.j
 published: false
 ---
 
-Here we will be discussing the importance of creating virtual environments and how to setup Pyenv on a Mac computer.
+Here I'll be discussing the importance of creating virtual environments and how to setup Pyenv on a Mac computer.
