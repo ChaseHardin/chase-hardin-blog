@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Button from '@material-ui/core/Button'
 import { Cards } from 'react-responsive-cards';
 import { Menu } from '../components/menu';
+import { SocialMedia } from "../components/social-media";
 
 export default ({ data }) => {
   const details = data.allMarkdownRemark.edges.map(({ node }) => {
@@ -33,6 +34,9 @@ export default ({ data }) => {
       <Menu />
       <div style={{ margin: `3rem auto`, padding: `0 1rem` }}>
         <Cards details={details} />
+      </div>
+      <div style={{ margin: `3rem auto`, padding: `0 1rem` }}>
+        <SocialMedia />
       </div>
     </>
   );
