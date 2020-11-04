@@ -57,6 +57,10 @@ p {
     margin-top: -15px;
 }
 
+.social-media {
+    margin: 10px;
+}
+
 .social-media:hover {
     cursor: pointer;
 }
