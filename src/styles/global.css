@@ -56,3 +56,8 @@ p {
     text-align: center;
     margin-top: -15px;
 }
+
+.social-media:hover {
+    cursor: pointer;
+}
+
