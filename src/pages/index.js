@@ -5,12 +5,15 @@ import { Cards } from 'react-responsive-cards';
 import { Menu } from '../components/menu';
 
 export default ({ data }) => {
+  const [selectedCategory, setSelectedCategory] = React.useState(undefined);
+
   const details = data.allMarkdownRemark.edges.map(({ node }) => {
     if (node.frontmatter.published) {
       return {
         title: node.frontmatter.title,
         description: node.excerpt,
         image: node.frontmatter.cover,
+        categories: node.frontmatter.categories,
         renderFooter: <Button
           variant="contained"
           size={'large'}
@@ -21,6 +24,7 @@ export default ({ data }) => {
       title: node.frontmatter.title,
       description: node.excerpt,
       image: node.frontmatter.cover,
+      categories: node.frontmatter.categories,
       renderFooter: <Button
         disabled
         variant="contained"
@@ -31,8 +35,16 @@ export default ({ data }) => {
   return (
     <>
       <Menu />
+      <div>
+        <Button
+          style={{ borderRadius: '14px', backgroundColor: '#242526', color: 'white' }}
+          onClick={() => setSelectedCategory('JavaScript')}>JavaScript</Button>
+        <Button
+          style={{ borderRadius: '14px', backgroundColor: '#242526', color: 'white' }}
+          onClick={() => setSelectedCategory('Python')}>Pyton</Button>
+      </div>
       <div style={{ margin: `3rem auto`, padding: `0 1rem` }}>
-        <Cards details={details} />
+        <Cards details={details.filter(detail => detail.categories.includes(selectedCategory) || selectedCategory === undefined)} />
       </div>
     </>
   );
@@ -51,6 +63,7 @@ export const query = graphql`
             cover
             date(formatString: "YYYY-MM-DD")
             published
+            categories
           }
           fields {
             slug

@@ -3,7 +3,8 @@ title: "A Functional Approach to The Builder Pattern"
 date: "2020-08-10"
 author: Chase Hardin
 cover: https://cdn.pixabay.com/photo/2015/04/05/16/12/lego-708088_960_720.jpg
-published: true
+published: true,
+categories: ['JavaScript']
 ---
 
 As a coder, the builder pattern is my go-to. It makes data setup extremely easy - instantiate a class, chain some methods together, and finish by executing a build method. However, every time I write a builder class, I can’t help but wonder if there’s a more functional approach that completely removes state. This of course is on the forefront of my mind since my contract relates to writing React and utilizing pure components.
