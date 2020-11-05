@@ -4,6 +4,10 @@ a h3 {
 
 a {
     text-decoration: none !important;
+}
+
+.MuiButton-label a {
+    text-decoration: none !important;
     color: white !important;
 }
 
