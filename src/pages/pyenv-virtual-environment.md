@@ -3,6 +3,7 @@ title: "Configuring Virtual Environments with Pyenv"
 date: "2019-11-26"
 author: Chase Hardin
 cover: https://cdn.pixabay.com/photo/2015/12/09/15/51/code-1084923_1280.png
+categories: ['Python']
 published: false
 ---
 

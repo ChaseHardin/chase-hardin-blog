@@ -3,6 +3,7 @@ title: "A Functional Approach to The Builder Pattern"
 date: "2020-08-10"
 author: Chase Hardin
 cover: https://cdn.pixabay.com/photo/2015/04/05/16/12/lego-708088_960_720.jpg
+categories: ['JavaScript']
 published: true
 ---
 
