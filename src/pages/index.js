@@ -4,14 +4,22 @@ import Button from '@material-ui/core/Button'
 import { Cards } from 'react-responsive-cards';
 import { Menu } from '../components/menu';
 import { SocialMedia } from "../components/social-media";
+import { Grid } from "@material-ui/core";
 
 export default ({ data }) => {
+  const [selectedCategory, setSelectedCategory] = React.useState(undefined);
+
+  const uniqueCategories = [...new Set(data.allMarkdownRemark.edges.flatMap(({ node }) => {
+    return node.frontmatter.categories
+  }))];
+
   const details = data.allMarkdownRemark.edges.map(({ node }) => {
     if (node.frontmatter.published) {
       return {
         title: node.frontmatter.title,
         description: node.excerpt,
         image: node.frontmatter.cover,
+        categories: node.frontmatter.categories,
         renderFooter: <Button
           variant="contained"
           size={'large'}
@@ -22,6 +30,7 @@ export default ({ data }) => {
       title: node.frontmatter.title,
       description: node.excerpt,
       image: node.frontmatter.cover,
+      categories: node.frontmatter.categories,
       renderFooter: <Button
         disabled
         variant="contained"
@@ -29,11 +38,39 @@ export default ({ data }) => {
     }
   });
 
+  const renderFilterChips = () => {
+    const buttonStyles = {
+      backgroundColor: '#242526', 
+      color: 'white', 
+      margin: '4px', 
+      borderRadius: '18px', 
+      outline: 'none'
+    };
+
+    const chips = uniqueCategories.map(category => <Button
+      key={category}
+      size={'large'}
+      style={buttonStyles}
+      onClick={() => setSelectedCategory(category)}>{category}</Button>
+    )
+
+    return (
+      <Grid container direction="row" justify="center" alignItems="center" style={{ marginTop: '-1rem', marginBottom: 0 }}>
+        {chips}
+        <Button
+          size={'large'}
+          style={buttonStyles}
+          onClick={() => setSelectedCategory(undefined)}>{'Clear Filters'}</Button>
+      </Grid>
+    )
+  };
+
   return (
     <>
       <Menu />
       <div style={{ margin: `3rem auto`, padding: `0 1rem` }}>
-        <Cards details={details} />
+        {renderFilterChips()}
+        <Cards details={details.filter(detail => detail.categories.includes(selectedCategory) || selectedCategory === undefined)} />
       </div>
       <div style={{ margin: `3rem auto`, padding: `0 1rem` }}>
         <SocialMedia />
@@ -54,6 +91,7 @@ export const query = graphql`
             author
             cover
             date(formatString: "YYYY-MM-DD")
+            categories
             published
           }
           fields {
