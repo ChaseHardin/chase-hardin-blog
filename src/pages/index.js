@@ -40,10 +40,10 @@ export default ({ data }) => {
 
   const renderFilterChips = () => {
     const buttonStyles = {
-      backgroundColor: '#242526', 
-      color: 'white', 
-      margin: '4px', 
-      borderRadius: '18px', 
+      backgroundColor: '#242526',
+      color: 'white',
+      margin: '4px',
+      borderRadius: '18px',
       outline: 'none'
     };
 
@@ -55,12 +55,14 @@ export default ({ data }) => {
     )
 
     return (
-      <Grid container direction="row" justify="center" alignItems="center" style={{ marginTop: '-1rem', marginBottom: 0 }}>
-        {chips}
-        <Button
-          size={'large'}
-          style={buttonStyles}
-          onClick={() => setSelectedCategory(undefined)}>{'Clear Filters'}</Button>
+      <Grid container justify={'center'}>
+        <Grid item lg={9} sm={12} justify="flex-start" style={{ marginTop: '-1rem', marginBottom: 0 }}>
+          {chips}
+          <Button
+            size={'large'}
+            style={buttonStyles}
+            onClick={() => setSelectedCategory(undefined)}>{'Clear'}</Button>
+        </Grid>
       </Grid>
     )
   };
@@ -70,7 +72,11 @@ export default ({ data }) => {
       <Menu />
       <div style={{ margin: `3rem auto`, padding: `0 1rem` }}>
         {renderFilterChips()}
-        <Cards details={details.filter(detail => detail.categories.includes(selectedCategory) || selectedCategory === undefined)} />
+        <Grid container justify="center">
+          <Grid item lg={9} justify="flex-start">
+            <Cards details={details.filter(detail => detail.categories.includes(selectedCategory) || selectedCategory === undefined)} />
+          </Grid>
+        </Grid>
       </div>
       <div style={{ margin: `3rem auto`, padding: `0 1rem` }}>
         <SocialMedia />
