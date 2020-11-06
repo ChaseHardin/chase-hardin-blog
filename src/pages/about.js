@@ -44,7 +44,8 @@ export default function About() {
       <Typography>
         In 2018, I married my gorgeous wife, Makenna. We live on an 8.5-acre acreage with chickens, two cats, and our
         golden retrievers – Ranger and Bambi. With the extra space, I’ve become a weekend woodworker and enjoy building
-        tables and cutting boards. Being a guitarist and woodworker, I'd like to build my own guitar one day! 🎸
+        things. This past year, I've built tables, cutting boards, and a butcher block work bench. As a woodworker
+        and guitarist, I'd like to build my own guitar one day! 🎸
       </Typography><br />
       <Typography variant={'h4'} style={headerFont}>
         The Purpose of This Blog
