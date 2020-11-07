@@ -6,6 +6,24 @@ import { Menu } from '../components/menu';
 import { SocialMedia } from "../components/social-media";
 import { Grid } from "@material-ui/core";
 
+const buttonStyles = {
+  backgroundColor: '#242526',
+  color: 'white',
+  margin: '4px',
+  borderRadius: '18px',
+  outline: 'none'
+};
+
+const makeDetail = (footer, node) => {
+  return {
+    title: node.frontmatter.title,
+    description: node.excerpt,
+    image: node.frontmatter.cover,
+    categories: node.frontmatter.categories,
+    renderFooter: footer
+  }
+};
+
 export default ({ data }) => {
   const [selectedCategory, setSelectedCategory] = React.useState(undefined);
 
@@ -15,38 +33,23 @@ export default ({ data }) => {
 
   const details = data.allMarkdownRemark.edges.map(({ node }) => {
     if (node.frontmatter.published) {
-      return {
-        title: node.frontmatter.title,
-        description: node.excerpt,
-        image: node.frontmatter.cover,
-        categories: node.frontmatter.categories,
-        renderFooter: <Button
-          variant="contained"
-          size={'large'}
-          style={{ float: 'right', backgroundColor: 'black' }}><Link to={node.fields.slug}>Read More</Link></Button>
-      }
-    }
-    return {
-      title: node.frontmatter.title,
-      description: node.excerpt,
-      image: node.frontmatter.cover,
-      categories: node.frontmatter.categories,
-      renderFooter: <Button
-        disabled
+      const button = <Button
         variant="contained"
-        size={'large'} style={{ float: 'right' }}><Link to={node.fields.slug}>Coming Soon</Link></Button>
+        size={'large'}
+        style={{ float: 'right', backgroundColor: 'black', borderRadius: '18px' }}><Link to={node.fields.slug}>Read More</Link></Button>
+
+      return makeDetail(button, node);
     }
+
+    const button = <Button
+      disabled
+      variant="contained"
+      size={'large'} style={{ float: 'right', borderRadius: '18px' }}><Link to={node.fields.slug}>Coming Soon</Link></Button>
+
+    return makeDetail(button, node);
   });
 
   const renderFilterChips = () => {
-    const buttonStyles = {
-      backgroundColor: '#242526',
-      color: 'white',
-      margin: '4px',
-      borderRadius: '18px',
-      outline: 'none'
-    };
-
     const chips = uniqueCategories.map(category => <Button
       key={category}
       size={'large'}
