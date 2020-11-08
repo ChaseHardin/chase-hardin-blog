@@ -11,7 +11,6 @@ const buttonStyles = {
   backgroundColor: '#242526',
   color: 'white',
   margin: '4px',
-  borderRadius: '18px',
   outline: 'none'
 };
 
@@ -38,8 +37,7 @@ export default ({ data }) => {
         <CardActions>
           <Button
             variant="contained"
-            size={'large'}
-            style={{ float: 'right', backgroundColor: 'black', borderRadius: '18px' }}>
+            style={{ float: 'right', backgroundColor: 'black' }}>
             <Link to={node.fields.slug}>
               Read More
             </Link>
@@ -55,7 +53,7 @@ export default ({ data }) => {
         <Button
           disabled
           variant="contained"
-          size={'large'} style={{ float: 'right', borderRadius: '18px' }}>
+          style={{ float: 'right' }}>
           <Link to={node.fields.slug}>
             Coming Soon
           </Link>
@@ -92,7 +90,7 @@ export default ({ data }) => {
       <Menu />
       <div style={{ margin: `3rem auto`, padding: `0 1rem` }}>
         {renderFilterChips()}
-            <Cards details={details.filter(detail => detail.categories.includes(selectedCategory) || selectedCategory === undefined)} />
+        <Cards details={details.filter(detail => detail.categories.includes(selectedCategory) || selectedCategory === undefined)} />
       </div>
       <div style={{ margin: `3rem auto`, padding: `0 1rem` }}>
         <SocialMedia />
