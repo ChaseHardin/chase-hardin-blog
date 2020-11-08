@@ -4,6 +4,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GithubIcon from '@material-ui/icons/GitHub'
 import Grid from '@material-ui/core/Grid';
+import IconButton from '@material-ui/core/IconButton';
 
 export const SocialMedia = () => {
     const handleFacebook = () => window.location.href = 'https://www.facebook.com/dchasehardin';
@@ -13,10 +14,18 @@ export const SocialMedia = () => {
 
     return (
         <Grid container direction="row" justify="center" alignItems="center">
-            <FacebookIcon onClick={handleFacebook} className={'social-media'} fontSize={'large'}/>
-            <TwitterIcon onClick={handleTwitter} className={'social-media'} fontSize={'large'}/>
-            <LinkedInIcon onClick={handleLinkedIn} className={'social-media'} fontSize={'large'}/>
-            <GithubIcon onClick={handleGithub} className={'social-media'} fontSize={'large'}/>
+            <IconButton aria-label="add to facebook icon" className={'social-media'}>
+                <FacebookIcon onClick={handleFacebook} fontSize={'large'} />
+            </IconButton>
+            <IconButton aria-label="add to facebook icon" className={'social-media'}>
+                <TwitterIcon onClick={handleTwitter} fontSize={'large'} />
+            </IconButton>
+            <IconButton aria-label="add to facebook icon" className={'social-media'}>
+                <LinkedInIcon onClick={handleLinkedIn} fontSize={'large'} />
+            </IconButton>
+            <IconButton aria-label="add to facebook icon" className={'social-media'}>
+                <GithubIcon onClick={handleGithub} fontSize={'large'} />
+            </IconButton>
         </Grid>
     )
 }
