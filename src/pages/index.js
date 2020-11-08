@@ -5,6 +5,7 @@ import { Cards } from 'react-responsive-cards';
 import { Menu } from '../components/menu';
 import { SocialMedia } from "../components/social-media";
 import { Grid } from "@material-ui/core";
+import CardActions from '@material-ui/core/CardActions';
 
 const buttonStyles = {
   backgroundColor: '#242526',
@@ -33,18 +34,34 @@ export default ({ data }) => {
 
   const details = data.allMarkdownRemark.edges.map(({ node }) => {
     if (node.frontmatter.published) {
-      const button = <Button
-        variant="contained"
-        size={'large'}
-        style={{ float: 'right', backgroundColor: 'black', borderRadius: '18px' }}><Link to={node.fields.slug}>Read More</Link></Button>
+      const button = (
+        <CardActions>
+          <Button
+            variant="contained"
+            size={'large'}
+            style={{ float: 'right', backgroundColor: 'black', borderRadius: '18px' }}>
+            <Link to={node.fields.slug}>
+              Read More
+            </Link>
+          </Button>
+        </CardActions>
+      )
 
       return makeDetail(button, node);
     }
 
-    const button = <Button
-      disabled
-      variant="contained"
-      size={'large'} style={{ float: 'right', borderRadius: '18px' }}><Link to={node.fields.slug}>Coming Soon</Link></Button>
+    const button = (
+      <CardActions>
+        <Button
+          disabled
+          variant="contained"
+          size={'large'} style={{ float: 'right', borderRadius: '18px' }}>
+          <Link to={node.fields.slug}>
+            Coming Soon
+          </Link>
+        </Button>
+      </CardActions>
+    )
 
     return makeDetail(button, node);
   });
@@ -75,11 +92,7 @@ export default ({ data }) => {
       <Menu />
       <div style={{ margin: `3rem auto`, padding: `0 1rem` }}>
         {renderFilterChips()}
-        <Grid container justify="center">
-          <Grid item lg={9} justify="flex-start">
             <Cards details={details.filter(detail => detail.categories.includes(selectedCategory) || selectedCategory === undefined)} />
-          </Grid>
-        </Grid>
       </div>
       <div style={{ margin: `3rem auto`, padding: `0 1rem` }}>
         <SocialMedia />
