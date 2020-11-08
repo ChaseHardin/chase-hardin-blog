@@ -1,10 +1,16 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Button from '@material-ui/core/Button'
-import { Cards } from 'react-responsive-cards';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/styles";
+import { purple } from "@material-ui/core/colors";
 import { Menu } from '../components/menu';
 import { SocialMedia } from "../components/social-media";
 import { Grid } from "@material-ui/core";
+import { Cards } from 'react-responsive-cards';
+import CardActions from '@material-ui/core/CardActions';
+import { theme } from '../theme';
 
 const buttonStyles = {
   backgroundColor: '#242526',
@@ -14,12 +20,13 @@ const buttonStyles = {
   outline: 'none'
 };
 
-const makeDetail = (footer, node) => {
+const makeDetail = (footer, node, isDisabled = false) => {
   return {
     title: node.frontmatter.title,
     description: node.excerpt,
     image: node.frontmatter.cover,
     categories: node.frontmatter.categories,
+    handleOnClick: isDisabled === false ? () => window.location.href = node.fields.slug : undefined,
     renderFooter: footer
   }
 };
@@ -33,20 +40,30 @@ export default ({ data }) => {
 
   const details = data.allMarkdownRemark.edges.map(({ node }) => {
     if (node.frontmatter.published) {
-      const button = <Button
-        variant="contained"
-        size={'large'}
-        style={{ float: 'right', backgroundColor: 'black', borderRadius: '18px' }}><Link to={node.fields.slug}>Read More</Link></Button>
+      const button = (
+        <CardActions>
+          <Button
+            variant="contained"
+            size={'large'}
+            style={{ float: 'right', backgroundColor: 'black', borderRadius: '18px' }}><Link to={node.fields.slug}>Read More</Link></Button>
+        </CardActions>
+      )
 
       return makeDetail(button, node);
     }
 
-    const button = <Button
-      disabled
-      variant="contained"
-      size={'large'} style={{ float: 'right', borderRadius: '18px' }}><Link to={node.fields.slug}>Coming Soon</Link></Button>
+    const button = (
+      <CardActions>
+        <Button
+          disabled
+          variant="contained"
+          size={'large'} style={{ float: 'right', borderRadius: '18px' }}><Link to={node.fields.slug}>Coming Soon</Link></Button>
+      </CardActions>
+    )
 
-    return makeDetail(button, node);
+    const isDisabled = true;
+
+    return makeDetail(button, node, isDisabled);
   });
 
   const renderFilterChips = () => {
@@ -58,33 +75,28 @@ export default ({ data }) => {
     )
 
     return (
-      <Grid container justify={'center'}>
-        <Grid item lg={9} sm={12} justify="flex-start" style={{ marginTop: '-1rem', marginBottom: 0 }}>
-          {chips}
-          <Button
-            size={'large'}
-            style={buttonStyles}
-            onClick={() => setSelectedCategory(undefined)}>{'Clear'}</Button>
-        </Grid>
+      <Grid container lg={9} sm={12} justify="flex-start" style={{ marginTop: '-1rem', marginBottom: 0 }}>
+        {chips}
+        <Button
+          size={'large'}
+          style={buttonStyles}
+          onClick={() => setSelectedCategory(undefined)}>{'Clear'}</Button>
       </Grid>
     )
   };
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Menu />
       <div style={{ margin: `3rem auto`, padding: `0 1rem` }}>
         {renderFilterChips()}
-        <Grid container justify="center">
-          <Grid item lg={9} justify="flex-start">
-            <Cards details={details.filter(detail => detail.categories.includes(selectedCategory) || selectedCategory === undefined)} />
-          </Grid>
-        </Grid>
+        <Cards details={details.filter(detail => detail.categories.includes(selectedCategory) || selectedCategory === undefined)} />
       </div>
       <div style={{ margin: `3rem auto`, padding: `0 1rem` }}>
         <SocialMedia />
       </div>
-    </>
+    </ThemeProvider>
   );
 };
 
