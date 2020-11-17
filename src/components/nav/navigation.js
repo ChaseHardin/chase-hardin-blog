@@ -61,6 +61,10 @@ export const Navigation = (props) => {
 
     const container = window !== undefined ? () => window().document.body : undefined;
 
+    {/* <Grid container direction="row" justify="flex-end" alignItems="center">
+        <ToggleTheme />
+    </Grid> */}
+    
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -83,9 +87,7 @@ export const Navigation = (props) => {
                             Chase Hardin
                         </Typography>
                     </Link>
-                    <Grid container direction="row" justify="flex-end" alignItems="center">
-                        <ToggleTheme />
-                    </Grid>
+
                 </Toolbar>
             </AppBar>
             <nav className={classes.drawer} aria-label="mailbox folders">

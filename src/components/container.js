@@ -15,7 +15,7 @@ export const Container = props => {
     }, [settings.isDark])
 
     return (
-        <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+        <ThemeProvider theme={darkTheme}>
             <CssBaseline />
             <Navigation {...props} />
         </ThemeProvider>

@@ -19,7 +19,7 @@ export const ToggleTheme = () => {
     return (
         <div>
             <Switch
-                checked={typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('isDark')) || settings.isDark : true}
+                checked={typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('isDark')) || settings.isDark : settings.isDark}
                 onChange={handleChange}
                 name="toggle"
                 inputProps={{ 'aria-label': 'secondary checkbox' }}
