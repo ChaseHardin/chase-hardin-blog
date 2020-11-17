@@ -31,7 +31,7 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
-        component: path.resolve(`./src/components/blog-post/blog-post-component.js`),
+        component: path.resolve(`./src/components/content/post-component.js`),
         context: {
           slug: node.fields.slug,
         },

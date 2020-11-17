@@ -1,0 +1,81 @@
+a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+.layout-content {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    height: 250px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 8px;
+}
+
+.profile-menu-picture-container {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+@media (min-width: 900px) and (max-width: 1000px) {
+    .layout-content {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 899px) {
+    .layout-content {
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 799px) {
+    .layout-content {
+        max-width: 440px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 699px) {
+    .layout-content {
+        max-width: 380px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 499px) {
+    .layout-content {
+        max-width: 325px;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 599px) {
+    .layout-content {
+        max-width: 440px;
+    }
+}
+
+@media (min-width: 370px) and (max-width: 399px) {
+    .layout-content {
+        max-width: 300px;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 369px) {
+    .layout-content {
+        max-width: 275px;
+    }
+}
+
+@media (min-width: 100px) and (max-width: 299px) {
+    .layout-content {
+        max-width: 230px;
+    }
+}
