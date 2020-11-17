@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DEFAULT_STATE = {
-    isDark: JSON.parse(localStorage.getItem('isDark'))
+    isDark: typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('isDark')) : true
 };
 
 export const SettingsContext = React.createContext(DEFAULT_STATE);

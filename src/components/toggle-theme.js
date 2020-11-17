@@ -11,13 +11,13 @@ export const ToggleTheme = () => {
             isDark: event.target.checked
         })
 
-        localStorage.setItem('isDark', event.target.checked);
+        typeof window !== 'undefined' ? window.localStorage.setItem('isDark', event.target.checked) : true;
     };
 
     return (
         <div>
             <Switch
-                checked={JSON.parse(localStorage.getItem('isDark')) || settings.isDark}
+                checked={typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('isDark')) || settings.isDark : true}
                 onChange={handleChange}
                 name="toggle"
                 inputProps={{ 'aria-label': 'secondary checkbox' }}
