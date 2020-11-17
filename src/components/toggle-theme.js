@@ -11,7 +11,9 @@ export const ToggleTheme = () => {
             isDark: event.target.checked
         })
 
-        typeof window !== 'undefined' ? window.localStorage.setItem('isDark', event.target.checked) : true;
+        if (window !== 'undefined') {
+            window.localStorage.setItem('isDark', event.target.checked)
+        }
     };
 
     return (

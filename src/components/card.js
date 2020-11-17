@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 import EventIcon from '@material-ui/icons/Event';
 import { makeStyles } from '@material-ui/core/styles';
+import { navigate } from "gatsby"
 
 const useStyles = makeStyles({
     root: {
@@ -30,7 +31,7 @@ export const SummaryCard = props => {
                     size={'large'}
                     variant="outlined"
                     color="secondary"
-                    onClick={() => window.location.href = props.slug}>
+                    onClick={() => navigate(props.slug)}>
                     {label}
                 </Button>
             )
@@ -49,7 +50,7 @@ export const SummaryCard = props => {
 
     const handleOnClick = () => {
         if (props.isPublished) {
-            window.location.href = props.slug
+            navigate(props.slug)
         }
     }
 

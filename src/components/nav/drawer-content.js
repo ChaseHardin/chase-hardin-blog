@@ -7,6 +7,7 @@ import Divider from '@material-ui/core/Divider';
 import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfied';
 import { makeStyles } from '@material-ui/core/styles';
 import HomeIcon from '@material-ui/icons/Home';
+import { navigate } from "gatsby"
 
 const useStyles = makeStyles((theme) => ({
     toolbar: theme.mixins.toolbar
@@ -20,13 +21,13 @@ export const DrawerContent = () => {
             <div className={classes.toolbar} />
             <Divider />
             <List>
-                <ListItem button key={'home'} onClick={() => window.location.href = '/'}>
+                <ListItem button key={'home'} onClick={() => navigate('/')}>
                     <ListItemIcon>
                         <HomeIcon />
                     </ListItemIcon>
                     <ListItemText primary={'Home'} />
                 </ListItem>
-                <ListItem button key={'about'} onClick={() => window.location.href = '/about'}>
+                <ListItem button key={'about'} onClick={() => navigate('/about')}>
                     <ListItemIcon>
                         <SentimentVerySatisfiedIcon />
                     </ListItemIcon>
